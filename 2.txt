@@ -1,0 +1,32 @@
+npm iinit -y => package.json
+npm i -D typescript
+tsc - v = проверка версии typescript
+(если глобальная версия отличается: sudo npm i -g typescript)
+mf index.html
+materializecss.com/getting-started.html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<div class="cotainer"></div>
+
+//===================================
+команда tsc <command> компилирует js файлы в терминале
+tsc --init = создаёт tsconfig.json
+tsc -w (tsc --watch) сам следит за изменениями
+в нём можно конфигурировать компеляцию js.
+Разкоментируем и отредактируем
+"outDir": "./dist", = все скомпилированные файлы ложим в папку dist
+"rootDir": "./src", = корневая директория
+"sourceMap": true, = компилирует map фаил чтобы в браузере видеть в исходниках не только js файлы но и ts
+"noEmitOnError": true, = если есть ошибки не будет компилировать
+Можем добавить:
+"exclude": [
+    "./app.js"
+] = исключает фаилы из компиляции (папка node_modules вносится автоматом)
+"include": [
+    "./src/**/*
+] = добавляет папку src и всё её содержимое в компиляцию
+"files": [
+    "./file.ts"
+] = добавляет file.ts в компиляцию
+// ================================================
+
+<script src="dist/app.js"></script>

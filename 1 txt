@@ -1,0 +1,9 @@
+sudo npm i -g typescript
+
+mf 1.ts
+
+$ tsc 1.ts 
+=> 1.js
+$ node 1.js
+Hello, Den
+
